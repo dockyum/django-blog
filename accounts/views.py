@@ -5,3 +5,4 @@ from django.shortcuts import render
 def profile(request):
   return render(request, 'accounts/profile.html')
 
+#https://wikidocs.net/9942 소셜 로그인 추가.
