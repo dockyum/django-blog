@@ -9,11 +9,18 @@
   <script src="main.js"></script>
 </head>
 <body>
-  <h1> askDjango Blog </h1>
+  <h1> 
+    <a href="{% url 'root' %}">askDjango Blog </a>
+  </h1>
 
-  sign up,
-  sign in,
-  sign out
+  {% if user.is_authenticated %}
+    <a href="{% url 'profile' %}">{{user}}</a>,
+    sign out
+  {% else %}
+    <a href="{% url 'login' %}?next={{request.path}}">sign in</a>,
+    sign up
+  {% endif %}
+  
 
   {% block content %}
   {% endblock %}
