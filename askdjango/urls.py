@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('accounts/', include('django.contrib.auth.urls')),
     path('blog/', include('blog.urls')),
     path('', lambda req: redirect('blog:post_list')), #url reverse..?
 ]
